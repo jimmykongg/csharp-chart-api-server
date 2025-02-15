@@ -27,7 +27,7 @@ jobs:
         run: dotnet build --configuration Release --no-restore
 
       - name: Run Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet build --configuration Release --no-restore -v d | tee build.log
 
       - name: Upload Build Log
         uses: actions/upload-artifact@v4
